@@ -15,27 +15,29 @@ class Navlist extends React.Component {
 class Shop extends React.Component {
     render() {
         return (
-            <figure>
-                <img src= "./images/icon-cart.svg" className= "mt-4 p-2"></img>
+            <figure className= "justify-self-end mt-4">
+                <img src= "./images/icon-cart.svg"></img>
             </figure>
         )
     }
 }
 
 function Avatar() {
-    return <figure>
-        <img src="./images/image-avatar.png" className= "w-2/4 mt-2 p-2"></img>
+    return <figure className= "justify-self-end mt-2 w-10">
+        <img src="./images/image-avatar.png"></img>
     </figure>
 }
 
 class Nav extends React.Component {
     render() {
         return (
-            <nav id="header" className= "flex justify-center flex-row mx-w-full space-x-5">
+            <nav id="header" className= "flex justify-between flex-row mx-w-full space-x-2 pl-16">
                 <img src="./images/logo.svg" id= "logo" className= "w-21 h-9 mt-3 p-2"></img>
                 <Navlist />
-                <Shop />
-                <Avatar />
+                <div role= "group" className= "flex flex-row space-x-7 mt-2">
+                    <Shop />
+                    <Avatar />
+                </div>
             </nav>
         )   
     }
