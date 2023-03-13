@@ -1,12 +1,12 @@
 class Navlist extends React.Component {
     render() {
         return(
-            <ul>
-                <li>Collections</li>
-                <li>Men</li>
-                <li>Women</li>
-                <li>About</li>
-                <li>Contact</li>
+            <ul className= "flex justify-between flex-row">
+                <li className="m-5">Collections</li>
+                <li className="m-5">Men</li>
+                <li className="m-5">Women</li>
+                <li className="m-5">About</li>
+                <li className="m-5">Contact</li>
             </ul>
         )
     }
@@ -16,7 +16,7 @@ class Shop extends React.Component {
     render() {
         return (
             <figure>
-                <img src= "./images/icon-cart.svg"></img>
+                <img src= "./images/icon-cart.svg" className= "mt-4 p-2"></img>
             </figure>
         )
     }
@@ -24,15 +24,15 @@ class Shop extends React.Component {
 
 function Avatar() {
     return <figure>
-        <img src="./images/image-avatar.png"></img>
+        <img src="./images/image-avatar.png" className= "w-2/4 mt-2 p-2"></img>
     </figure>
 }
 
 class Nav extends React.Component {
     render() {
         return (
-            <nav>
-                <h1>Sneakers</h1>
+            <nav id="header" className= "flex justify-center flex-row mx-w-full space-x-5">
+                <img src="./images/logo.svg" id= "logo" className= "w-21 h-9 mt-3 p-2"></img>
                 <Navlist />
                 <Shop />
                 <Avatar />
@@ -45,7 +45,7 @@ class Bigimage extends React.Component {
     render() {
         return(
             <figure>
-            <img src="./images/image-product-1.jpg"></img>
+            <img src="./images/image-product-1.jpg" className= "rounded-lg"></img>
         </figure> 
         )
     }
@@ -54,18 +54,18 @@ class Bigimage extends React.Component {
 class Slidermenu extends React.Component {
     render() {
         return(
-            <nav>
+            <nav className= "flex flex-row space-x-5">
                 <figure>
-                <img src="./images/image-product-1-thumbnail.jpg"></img>
+                <img src="./images/image-product-1-thumbnail.jpg" className= "rounded-lg"></img>
                 </figure>
                 <figure>
-                <img src="./images/image-product-2-thumbnail.jpg"></img>
+                <img src="./images/image-product-2-thumbnail.jpg" className= "rounded-lg"></img>
                 </figure>
                 <figure>
-                <img src="./images/image-product-3-thumbnail.jpg"></img>
+                <img src="./images/image-product-3-thumbnail.jpg" className= "rounded-lg"></img>
                 </figure>
                 <figure>
-                <img src="./images/image-product-4-thumbnail.jpg"></img>
+                <img src="./images/image-product-4-thumbnail.jpg" className= "rounded-lg"></img>
                 </figure>
             </nav>
         )
@@ -75,7 +75,7 @@ class Slidermenu extends React.Component {
 class Imagepreview extends React.Component {
     render() {
         return(
-            <section>
+            <section className= "flex flex-col space-y-5">
                 <Bigimage />
                 <Slidermenu />
             </section>
@@ -84,26 +84,30 @@ class Imagepreview extends React.Component {
 }
 
 function Productdescription() {
-    return <div role ="group">
-        <h2>Sneaker Company</h2>
-        <h3>Fall Limited Edition Sneakers</h3>
-        <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
+    return <div role ="group" className= "flex flex-col space-y-8 mt-5">
+        <h2 className= "text-xs font-bold">Sneaker Company</h2>
+        <h3 className= "text-5xl font-bold">Fall Limited Edition Sneakers</h3>
+        <p id="productdes" className= "leading-6 font-semi-bold">These low-profile sneakers are your perfect casual wear companion. Featuring a 
   durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
-        <p> $125.00 <sup>50%</sup> </p>
-        <p>$250.00</p>
+        <p className= "text-3xl leading-5 font-bold"> $125.00 <sup className= "text-sm rounded-md p-1">50%</sup> <br /> 
+        <span id="price" className= "text-sm">$250.00</span>
+        </p>
     </div>
 }
 
 class Buyitem extends React.Component {
     render() {
         return(
-            <div role ="group">
-                <figure>
-                    <img src="./images/icon-plus.svg"></img>
-                    <p>0</p>
-                    <img src="./images/icon-minus.svg"></img>
+            <div role ="group" className= "flex flex-row space-x-5">
+                <figure id="number" className= "flex flex-row rounded-lg space-x-10 px-5">
+                    <img src="./images/icon-minus.svg" className= "w-3 h-1 justify-self-center self-center"></img>
+                    <p className="justify-self-center self-center font-semi-bold">0</p>
+                    <img src="./images/icon-plus.svg" className= "w-3 h-3 justify-self-center self-center"></img>
                 </figure>
-                <button>Add to cart</button>
+                <button className= "flex flex-row rounded-lg text-white p-2 px-10">
+                    <img src= "./images/icon-cart-2.svg" className= "pr-3"></img>
+                    Add to cart
+                </button>
             </div>
         )
     }
@@ -112,7 +116,7 @@ class Buyitem extends React.Component {
 class Textualside extends React.Component {
     render() {
         return(
-            <article>
+            <article className= "flex flex-col mt-10 space-y-8">
                 <Productdescription />
                 <Buyitem />
             </article>
@@ -123,7 +127,7 @@ class Textualside extends React.Component {
 class Body extends React.Component {
     render() {
         return(
-            <section>
+            <section className= "flex flex-row mt-10 space-x-28">
                 <Imagepreview />
                 <Textualside />
             </section>
@@ -132,7 +136,7 @@ class Body extends React.Component {
 }
 
 function Closing() {
-    return <div className ="attribution">
+    return <div className ="attribution mt-5">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/Aik-202/aik-ecommerce-product-page.git">Assurance Ikogwe</a>.
     </div>
