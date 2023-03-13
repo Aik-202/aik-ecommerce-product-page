@@ -31,9 +31,11 @@ function Avatar() {
 class Nav extends React.Component {
     render() {
         return (
-            <nav id="header" className= "flex justify-between flex-row mx-w-full space-x-2 pl-16">
-                <img src="./images/logo.svg" id= "logo" className= "w-21 h-9 mt-3 p-2"></img>
-                <Navlist />
+            <nav id="header" className= "flex justify-between flex-row mx-w-full space-x-2">
+                <div role= "group" className= "flex flex-row space-x-5">
+                    <img src="./images/logo.svg" id= "logo" className= "w-21 h-9 mt-3 p-2"></img>
+                    <Navlist />
+                </div>
                 <div role= "group" className= "flex flex-row space-x-7 mt-2">
                     <Shop />
                     <Avatar />
