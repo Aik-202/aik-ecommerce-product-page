@@ -8,10 +8,6 @@ body {
     background-color: hsl(0, 0%, 100%);
 }
 
-#header {
-    border-bottom: 1px solid hsl(223, 64%, 98%);
-}
-
 ul li {
     color: hsl(219, 9%, 45%);
 }
@@ -52,6 +48,7 @@ button {
 
 #productdes {
     color: hsl(219, 9%, 45%);
+    font-size: 15px;
 }
 
 #price {
@@ -67,4 +64,10 @@ button {
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 1280px) {
+    #header {
+        border-bottom: 1px solid hsl(223, 64%, 98%);
+    } 
 }
