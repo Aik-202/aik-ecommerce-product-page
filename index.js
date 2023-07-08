@@ -1,15 +1,13 @@
-class Navlist extends React.Component {
-    render() {
-        return(
-            <ul className= "hidden sm:flex justify-between flex-row">
-                <li className="sm:my-5 mx-2 lg:m-5">Collections</li>
-                <li className="sm:my-5 mx-2 lg:m-5">Men</li>
-                <li className="sm:my-5 mx-2 lg:m-5">Women</li>
-                <li className="sm:my-5 mx-2 lg:m-5">About</li>
-                <li className="sm:my-5 mx-2 lg:m-5">Contact</li>
-            </ul>
-        )
-    }
+function Navlist() {
+    return(
+        <ul className= "hidden sm:flex justify-between flex-row">
+            <li className="sm:my-5 mx-2 lg:m-5">Collections</li>
+            <li className="sm:my-5 mx-2 lg:m-5">Men</li>
+            <li className="sm:my-5 mx-2 lg:m-5">Women</li>
+            <li className="sm:my-5 mx-2 lg:m-5">About</li>
+            <li className="sm:my-5 mx-2 lg:m-5">Contact</li>
+        </ul>
+    )
 }
 
 function Hamburger() {
@@ -20,14 +18,12 @@ function Hamburger() {
     )
 }
 
-class Shop extends React.Component {
-    render() {
-        return (
-            <figure className= "justify-self-end mt-4">
-                <img src= "./images/icon-cart.svg"></img>
-            </figure>
-        )
-    }
+function Shop() {
+    return (
+        <figure className= "justify-self-end mt-4">
+            <img src= "./images/icon-cart.svg"></img>
+        </figure>
+    )
 }
 
 function Avatar() {
@@ -36,64 +32,55 @@ function Avatar() {
     </figure>
 }
 
-class Nav extends React.Component {
-    render() {
-        return (
-            <nav id="header" className= "flex flex-row mx-w-full space-x-2 justify-between">
-                <div role= "group" className= "flex flex-row space-x-2 sm:space-x-5">
-                    <Hamburger />
-                    <img src="./images/logo.svg" id= "logo" className= "w-21 h-9 mt-3 p-2"></img>
-                    <Navlist />
-                </div>
-                <div role= "group" className= "flex flex-row space-x-7 mt-2">
-                    <Shop />
-                    <Avatar />
-                </div>
-            </nav>
-        )   
-    }
+function Nav() {
+    return (
+        <nav id="header" className= "flex flex-row mx-w-full space-x-2 justify-between">
+            <div role= "group" className= "flex flex-row space-x-2 sm:space-x-5">
+                <Hamburger />
+                <img src="./images/logo.svg" id= "logo" className= "w-21 h-9 mt-3 p-2"></img>
+                <Navlist />
+            </div>
+            <div role= "group" className= "flex flex-row space-x-7 mt-2">
+                <Shop />
+                <Avatar />
+            </div>
+        </nav>
+    )   
 }
-
-class Bigimage extends React.Component {
-    render() {
-        return(
+    
+function Bigimage() {
+    return(
+        <figure>
+        <img src="./images/image-product-1.jpg" className= "pointer-events-none sm:rounded-lg"></img>
+    </figure> 
+    )
+}
+function Slidermenu()  {
+    return(
+        <nav className= "hidden sm:flex flex-row space-x-5">
             <figure>
-            <img src="./images/image-product-1.jpg" className= "pointer-events-none sm:rounded-lg"></img>
-        </figure> 
-        )
-    }
+            <img src="./images/image-product-1-thumbnail.jpg" className= "rounded-lg"></img>
+            </figure>
+            <figure>
+            <img src="./images/image-product-2-thumbnail.jpg" className= "rounded-lg"></img>
+            </figure>
+            <figure>
+            <img src="./images/image-product-3-thumbnail.jpg" className= "rounded-lg"></img>
+            </figure>
+            <figure>
+            <img src="./images/image-product-4-thumbnail.jpg" className= "rounded-lg"></img>
+            </figure>
+        </nav>
+    )
 }
 
-class Slidermenu extends React.Component {
-    render() {
-        return(
-            <nav className= "hidden sm:flex flex-row space-x-5">
-                <figure>
-                <img src="./images/image-product-1-thumbnail.jpg" className= "rounded-lg"></img>
-                </figure>
-                <figure>
-                <img src="./images/image-product-2-thumbnail.jpg" className= "rounded-lg"></img>
-                </figure>
-                <figure>
-                <img src="./images/image-product-3-thumbnail.jpg" className= "rounded-lg"></img>
-                </figure>
-                <figure>
-                <img src="./images/image-product-4-thumbnail.jpg" className= "rounded-lg"></img>
-                </figure>
-            </nav>
-        )
-    }
-}
-
-class Imagepreview extends React.Component {
-    render() {
-        return(
-            <section className= "sm:flex flex-col space-y-5">
-                <Bigimage />
-                <Slidermenu />
-            </section>
-        )
-    }
+function Imagepreview() {
+    return(
+        <section className= "sm:flex flex-col space-y-5">
+            <Bigimage />
+            <Slidermenu />
+        </section>
+    )
 }
 
 function Productdescription() {
@@ -109,44 +96,48 @@ function Productdescription() {
     </div>
 }
 
-class Buyitem extends React.Component {
-    render() {
-        return(
-            <div role ="group" className= "flex flex-col space-y-5 sm:flex-row sm:space-x-5">
-                <figure id="number" className= "flex justify-between flex-row mr-5 rounded-lg space-x-5 py-3 px-5 sm:space-x-12 sm:py-0 sm:mr-0 sm:h-13 sm:mt-5">
-                    <img src="./images/icon-minus.svg" className= "w-3 h-1 justify-self-center self-center"></img>
-                    <p className="justify-self-center self-center font-semi-bold">0</p>
-                    <img src="./images/icon-plus.svg" className= "w-3 h-3 justify-self-center self-center"></img>
-                </figure>
-                <button className= "flex justify-center flex-row rounded-lg text-white mr-5 p-2 py-3 px-10 sm:px-5 lg:mr-0">
-                    <img src= "./images/icon-cart-2.svg" className= "pr-3"></img>
-                    Add to cart
-                </button>
-            </div>
-        )
+function Buyitem() {
+    const [count, setCount] = React.useState(0)
+
+    const increase = () => {
+        setCount((prevCount) => prevCount + 1)
     }
+
+    const decrease = () => {
+        setCount((prevCount) => prevCount - 1)
+    }
+
+    return(
+        <div role ="group" className= "flex flex-col space-y-5 sm:flex-row sm:space-x-5">
+            <figure id="number" className= "flex justify-between flex-row mr-5 rounded-lg space-x-5 py-3 px-5 sm:space-x-12 sm:py-0 sm:mr-0 sm:h-13 sm:mt-5">
+                <img src="./images/icon-minus.svg" className= "w-3 h-1 justify-self-center self-center" onclick={decrease()}></img>
+                <p className="justify-self-center self-center font-semi-bold">{count}</p>
+                <img src="./images/icon-plus.svg" className= "w-3 h-3 justify-self-center self-center" onclick={increase()}></img>
+            </figure>
+            <button className= "flex justify-center flex-row rounded-lg text-white mr-5 p-2 py-3 px-10 sm:px-5 lg:mr-0">
+                <img src= "./images/icon-cart-2.svg" className= "pr-3"></img>
+                Add to cart
+            </button>
+        </div>
+    )
 }
 
-class Textualside extends React.Component {
-    render() {
-        return(
-            <article className= "flex flex-col sm:mt-5 sm:space-y-1 xl:mt-10 space-y-8">
-                <Productdescription />
-                <Buyitem />
-            </article>
-        )
-    }
+function Textualside() {
+    return(
+        <article className= "flex flex-col sm:mt-5 sm:space-y-1 xl:mt-10 space-y-8">
+            <Productdescription />
+            <Buyitem />
+        </article>
+    )
 }
 
-class Body extends React.Component {
-    render() {
-        return(
-            <section className= "flex flex-col mt-3 space-x-5 sm:flex-row sm:mt-10 sm:space-x-10 lg:space-x-28">
-                <Imagepreview />
-                <Textualside />
-            </section>
-        )
-    }
+function Body() {
+    return(
+        <section className= "flex flex-col mt-3 space-x-5 sm:flex-row sm:mt-10 sm:space-x-10 lg:space-x-28">
+            <Imagepreview />
+            <Textualside />
+        </section>
+    )
 }
 
 function Closing() {
