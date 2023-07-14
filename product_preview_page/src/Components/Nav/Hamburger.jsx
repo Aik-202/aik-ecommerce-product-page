@@ -1,9 +1,10 @@
 import React from 'react';
+import { Menu } from '../../Data';
 
 export default function Hamburger() {
     return (
         <figure className= "ml-3 mt-6 sm:hidden">
-            <img src= "./images/icon-menu.svg"></img>
+            <img src={Menu} />
         </figure>
     )
 }

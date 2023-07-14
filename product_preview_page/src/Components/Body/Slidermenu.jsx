@@ -1,19 +1,20 @@
 import React from 'react';
+import { Smallproduct1, Smallproduct2, Smallproduct3, Smallproduct4 } from '../../Data';
 
 export default function Slidermenu()  {
     return(
         <nav className= "hidden sm:flex flex-row space-x-5">
             <figure>
-            <img src="./images/image-product-1-thumbnail.jpg" className= "rounded-lg"></img>
+            <img src={Smallproduct1} className= "rounded-lg"/>
             </figure>
             <figure>
-            <img src="./images/image-product-2-thumbnail.jpg" className= "rounded-lg"></img>
+            <img src={Smallproduct2} className= "rounded-lg"/>
             </figure>
             <figure>
-            <img src="./images/image-product-3-thumbnail.jpg" className= "rounded-lg"></img>
+            <img src={Smallproduct3} className= "rounded-lg"/>
             </figure>
             <figure>
-            <img src="./images/image-product-4-thumbnail.jpg" className= "rounded-lg"></img>
+            <img src={Smallproduct4} className= "rounded-lg"/>
             </figure>
         </nav>
     )
