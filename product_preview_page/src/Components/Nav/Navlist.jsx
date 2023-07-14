@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Navlist() {
+export default function Navlist() {
     return(
         <ul className= "hidden sm:flex justify-between flex-row">
             <li className="sm:my-5 mx-2 lg:m-5">Collections</li>

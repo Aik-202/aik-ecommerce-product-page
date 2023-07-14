@@ -1,6 +1,7 @@
 import React from 'react';
+import {Bigimage, Slidermenu} from '../'
 
-export function Imagepreview() {
+export default function Imagepreview() {
     return(
         <section className= "sm:flex flex-col space-y-5">
             <Bigimage />

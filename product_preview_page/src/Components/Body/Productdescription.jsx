@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Productdescription() {
+export default function Productdescription() {
     return <div role ="group" className= "flex flex-col space-y-5 sm:mt-2 xl:space-y-8 mt-5">
         <h2 className= "tracking-widest font-bold text-xs">Sneaker Company</h2>
         <h3 className= "font-bold text-3xl xl:text-5xl">Fall Limited Edition Sneakers</h3>

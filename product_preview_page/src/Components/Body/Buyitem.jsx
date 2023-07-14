@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Buyitem() {
+export default function Buyitem() {
     const [count, setCount] = React.useState(0)
 
     const increase = () => {

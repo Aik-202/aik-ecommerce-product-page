@@ -1,6 +1,7 @@
 import React from 'react';
+import {Hamburger, Navlist, Shop, Avatar} from '../'
 
-export function Nav() {
+export default function Nav() {
     return (
         <nav id="header" className= "flex flex-row mx-w-full space-x-2 justify-between">
             <div role= "group" className= "flex flex-row space-x-2 sm:space-x-5">

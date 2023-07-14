@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Slidermenu()  {
+export default function Slidermenu()  {
     return(
         <nav className= "hidden sm:flex flex-row space-x-5">
             <figure>
