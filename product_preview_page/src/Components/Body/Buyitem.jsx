@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cart, Minus, Plus } from '../../Data';
+import { Cart2, Minus, Plus } from '../../Data';
 
 export default function Buyitem() {
     const [count, setCount] = React.useState(0)
@@ -20,7 +20,7 @@ export default function Buyitem() {
                 <img src={Plus} className= "w-3 h-3 justify-self-center self-center" onclick={increase()}/>
             </figure>
             <button className= "flex justify-center flex-row rounded-lg text-white mr-5 p-2 py-3 px-10 sm:px-5 lg:mr-0">
-                <img src={Cart} className= "pr-3"/>
+                <img src={Cart2} className= "pr-3"/>
                 Add to cart
             </button>
         </div>
