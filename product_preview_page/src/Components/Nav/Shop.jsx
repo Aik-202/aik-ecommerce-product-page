@@ -1,0 +1,9 @@
+import React from 'react';
+
+export function Shop() {
+    return (
+        <figure className= "justify-self-end mt-4">
+            <img src= "./images/icon-cart.svg"></img>
+        </figure>
+    )
+}
