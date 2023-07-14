@@ -7,4 +7,4 @@ export default function App() {
         <Body />
         <Closing />
     </section>
-}
+}n
