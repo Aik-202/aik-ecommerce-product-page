@@ -29,42 +29,46 @@ export default function Imagepreview() {
 
     const nextImage = () => {
         setImageVal((preVal) => preVal + 1);
+        console.log(imageVal)
         if (imageVal == 1) {
-            setBigImage((prevImage) => {
-                return {...prevImage, img: Bigproduct1}
-            })
-        } else  if (imageVal == 2) {
             setBigImage((prevImage) => {
                 return {...prevImage, img: Bigproduct2}
             })
-        } else  if (imageVal == 3) {
+        } else  if (imageVal == 2) {
             setBigImage((prevImage) => {
                 return {...prevImage, img: Bigproduct3}
             })
-        }else  {
+        } else  if (imageVal == 3) {
             setBigImage((prevImage) => {
                 return {...prevImage, img: Bigproduct4}
             })
+        }else  {
+            setBigImage((prevImage) => {
+                return {...prevImage, img: Bigproduct1}
+            })
+            setImageVal(preVal => preVal - 3);
         } 
     }
 
     const prevImage = () => {
-        setImageVal((preVal) => preVal - 1);
+        setImageVal(preVal => preVal - 1);
+        console.log(imageVal)
         if (imageVal == 1) {
+            setBigImage((prevImage) => {
+                return {...prevImage, img: Bigproduct4}
+            })
+            setImageVal(preVal => preVal + 3);
+        } else  if (imageVal == 2) {
             setBigImage((prevImage) => {
                 return {...prevImage, img: Bigproduct1}
             })
-        } else  if (imageVal == 2) {
+        } else  if (imageVal == 3) {
             setBigImage((prevImage) => {
                 return {...prevImage, img: Bigproduct2}
             })
-        } else  if (imageVal == 3) {
+        }else   {
             setBigImage((prevImage) => {
-                return {...prevImage, img: Bigproduct3}
-            })
-        }else  {
-            setBigImage((prevImage) => {
-                return {...prevImage, img: Bigproduct4}
+                return {...prevImage, img: Bigproduct3}    
             })
         } 
     }
@@ -77,7 +81,7 @@ export default function Imagepreview() {
 
     return(
         <section className= "relative sm:flex-col sm:space-y-6 sm:flex">
-            <figure>
+            <figure className='cursor-pointer'>
                 <img src={bigImage.img} className= "pointer-events-none sm:rounded-lg"/>
             </figure>
             <nav className= "hidden sm:flex flex-row space-x-5">
