@@ -12,10 +12,6 @@ body {
     background-color: hsl(0, 0%, 100%);
 }
 
-ul li {
-    color: hsl(219, 9%, 45%);
-}
-
 h1 {
     font-size: 20px;
 }
