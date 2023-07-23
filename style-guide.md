@@ -11,17 +11,17 @@ The designs were created to the following widths:
 
 ### Primary
 
-- Orange: hsl(26, 100%, 55%)
-- Pale orange: hsl(25, 100%, 94%)
+- Orange: hsl(26, 100%, 55%) 	#ff7d1a
+- Pale orange: hsl(25, 100%, 94%) #ffede0
 
 ### Neutral
 
-- Very vark blue: hsl(220, 13%, 13%)
+- Very vark blue: hsl(220, 13%, 13%) #1d2025
 - Dark grayish blue: hsl(219, 9%, 45%)
-- Grayish blue: hsl(220, 14%, 75%)
-- Light grayish blue: hsl(223, 64%, 98%)
-- White: hsl(0, 0%, 100%)
-- Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%)
+- Grayish blue: hsl(220, 14%, 75%) #68707d
+- Light grayish blue: hsl(223, 64%, 98%) #f7f8fd
+- White: hsl(0, 0%, 100%) 	#ffffff
+- Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%) 	#000000
 
 ## Typography
 
