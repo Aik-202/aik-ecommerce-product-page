@@ -83,9 +83,11 @@ export default function Imagepreview() {
             <nav className= "hidden sm:flex flex-row space-x-5">
                 {images}
             </nav>
-            <figure className='absolute cursor-pointer flex flex-row-reverse justify-between w-full px-5 top-[50%] sm:hidden'>
-                <img src={Next} alt="previous" className='rounded-full bg-[#ffffff] py-2 px-3' onClick={nextImage}/>
-                <img src={Previous} alt="next" className='rounded-full bg-[#ffffff] py-2 px-3' onClick={prevImage}/>
+            <figure className='absolute cursor-pointer top-[50%] right-0 mr-5 rounded-full bg-[#ffffff] py-2 px-3 sm:hidden' onClick={nextImage}>
+                <img src={Next} alt="next"/>
+            </figure>
+            <figure className='absolute cursor-pointer top-[50%] left-0 ml-5 rounded-full bg-[#ffffff] py-2 px-3 sm:hidden' onClick={prevImage}>
+                <img src={Previous} alt="previous"/>
             </figure>
         </section>
     )
