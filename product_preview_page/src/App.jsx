@@ -3,10 +3,10 @@ import {Nav, Body, Closing} from './Components'
 
 export default function App() {
     return(
-         <section>
-        <Nav /> 
-        <Body />
-        <Closing />
-    </section>
+        <section>
+            <Nav /> 
+            <Body />
+            <Closing />
+        </section>
     )
 }
