@@ -3,7 +3,7 @@ import { Hamburger } from '../'
 import { Close, Logo } from '../../Data';
 
 export default function Navlist() {
-    const [activeMenu, setActiveMenu] = React.useState(true) 
+    const [activeMenu, setActiveMenu] = React.useState(false) 
     const closeMenu = () => {
         setActiveMenu(false)
     }
