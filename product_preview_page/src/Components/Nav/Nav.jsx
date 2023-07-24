@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navlist, Shop, Avatar} from '../'
+import {Navlist, Shop, Avatar, Cart} from '../'
 
 export default function Nav() {
     return (
