@@ -17,7 +17,7 @@ The designs were created to the following widths:
 ### Neutral
 
 - Very vark blue: hsl(220, 13%, 13%) #1d2025
-- Dark grayish blue: hsl(219, 9%, 45%)
+- Dark grayish blue: hsl(219, 9%, 45%) #68707d
 - Grayish blue: hsl(220, 14%, 75%) #68707d
 - Light grayish blue: hsl(223, 64%, 98%) #f7f8fd
 - White: hsl(0, 0%, 100%) 	#ffffff

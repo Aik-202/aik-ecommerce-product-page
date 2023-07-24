@@ -29,7 +29,6 @@ export default function Imagepreview() {
 
     const nextImage = () => {
         setImageVal((preVal) => preVal + 1);
-        console.log(imageVal)
         if (imageVal == 1) {
             setBigImage((prevImage) => {
                 return {...prevImage, img: Bigproduct2}
@@ -52,7 +51,6 @@ export default function Imagepreview() {
 
     const prevImage = () => {
         setImageVal(preVal => preVal - 1);
-        console.log(imageVal)
         if (imageVal == 1) {
             setBigImage((prevImage) => {
                 return {...prevImage, img: Bigproduct4}
