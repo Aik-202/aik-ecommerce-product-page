@@ -3,7 +3,7 @@ import {Nav, Body, Closing} from './Components'
 
 export default function App() {
     return(
-        <section>
+        <section className='min-h-screen w-full'>
             <Nav /> 
             <Body />
             <Closing />

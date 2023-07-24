@@ -78,7 +78,7 @@ export default function Imagepreview() {
     )
 
     return(
-        <section className= "relative sm:flex-col sm:space-y-6 sm:flex">
+        <section className= "relative sm:flex-col lg:ml-8 sm:space-y-6 sm:flex">
             <figure className='cursor-pointer'>
                 <img src={bigImage.img} className= "pointer-events-none sm:rounded-lg"/>
             </figure>

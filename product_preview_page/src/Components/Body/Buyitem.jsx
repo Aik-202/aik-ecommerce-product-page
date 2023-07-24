@@ -20,7 +20,7 @@ export default function Buyitem() {
                 <p className="justify-self-center self-center font-semi-bold">{count}</p>
                 <img src={Plus} className= "w-3 h-3 justify-self-center self-center" onClick={increase}/>
             </figure>
-            <button className= "flex justify-center flex-row rounded-lg text-white mr-5 p-2 py-3 px-10 sm:px-5 lg:mr-0">
+            <button className= "flex justify-center flex-row rounded-lg text-white mr-5 p-2 py-3 px-10 sm:px-5 lg:px-3 xl:px-5 lg:mr-0">
                 <img src={Cart2} className= "pr-3"/>
                 Add to cart
             </button>
