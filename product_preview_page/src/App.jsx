@@ -2,7 +2,7 @@ import React from 'react';
 import {Nav, Body, Closing, Cart} from './Components'
 
 export default function App() {
-    const [cartActive, setCartActive] = React.useState(false)
+    const [cartActive, setCartActive] = React.useState(true)
     
     const cartActivate = () => {
         setCartActive(prev => !prev)
