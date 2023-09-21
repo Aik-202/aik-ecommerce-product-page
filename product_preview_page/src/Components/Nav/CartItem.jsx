@@ -14,24 +14,24 @@ export default function CartItem () {
           }
      ]
 
-     const cartContent = cartItems.map((item) => <div key={item.id} className='flex flex-col px-5'>
-          <div className='flex flex-row self-center'>
-               <figure className='w-16'>
-                    <img src={item.img} alt="" />
+     const cartContent = cartItems.map((item) => <div key={item.id} className='flex flex-col px-5 justify-between w-full h-full pt-5 pb-10'>
+          <div className='flex flex-row justify-between w-full'>
+               <figure className='w-16 self-center rounded-lg'>
+                    <img src={item.img} alt="sneaker" className='rounded-lg' />
                </figure>
                <div>
-                    <h6>Autumn limited Edition...</h6>
+                    <h6>Fall limited Edition Sneakers</h6>
                     <p>{item.price} <b>{item.bill}</b></p>
                </div>
-               <figure>
-                    <img src={Delete} alt="" />
+               <figure className='self-center'>
+                    <img src={Delete} alt="delete" />
                </figure>
           </div>
-          <button>Checkout</button>
+          <button className='rounded-lg px-8 py-2 text-[#ffffff] mt-10'>Checkout</button>
      </div>)
 
      return (
-          <section className='flex h-full'>
+          <section className='flex'>
                     {cartContent}
                {/* <p className='mx-auto my-32 sm:my-10 text-[#68707d] font-extrabold'>Your cart is empty.</p> */}
           </section>
