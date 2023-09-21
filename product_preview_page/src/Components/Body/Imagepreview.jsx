@@ -79,16 +79,16 @@ export default function Imagepreview(props) {
 
     return(
         <section className= "relative sm:flex-col lg:ml-8 sm:space-y-6 sm:flex">
-            <figure className='cursor-pointer'>
+            <figure className='cursor-pointer' onClick={props.openLightBox}>
                 <img src={bigImage.img} className= "pointer-events-none sm:rounded-lg"/>
             </figure>
             <nav className= "hidden sm:flex flex-row space-x-5">
                 {images}
             </nav>
-            <figure className={`absolute cursor-pointer top-[50%] right-0 mr-5 rounded-full bg-[#ffffff] py-2 px-3 ${props.for ? 'sm:visible' : 'sm:hidden'}`} onClick={nextImage}>
+            <figure className={`absolute cursor-pointer top-[50%] right-0 mr-5 rounded-full bg-[#ffffff] py-2 px-3 ${props.for ? 'sm:visible top-[30%] -mr-3' : 'sm:hidden'}`} onClick={nextImage}>
                 <img src={Next} alt="next"/>
             </figure>
-            <figure className={`absolute cursor-pointer top-[50%] left-0 ml-5 rounded-full bg-[#ffffff] py-2 px-3 ${props.for ? 'sm:visible' : 'sm:hidden'}`} onClick={prevImage}>
+            <figure className={`absolute cursor-pointer top-[50%] left-0 ml-5 rounded-full bg-[#ffffff] py-2 px-3 ${props.for ? 'sm:visible top-[30%] -ml-3' : 'sm:hidden'}`} onClick={prevImage}>
                 <img src={Previous} alt="previous"/>
             </figure>
         </section>
