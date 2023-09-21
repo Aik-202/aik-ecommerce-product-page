@@ -3,7 +3,7 @@ import { Bigproduct1, Bigproduct2, Bigproduct3, Bigproduct4, Next, Previous } fr
 import { imageList } from '../../Data/demo';
 // import {Bigimage, Slidermenu} from '../'
 
-export default function Imagepreview() {
+export default function Imagepreview(props) {
     const [bigImage, setBigImage] = React.useState({img: Bigproduct1});
     const [imageVal, setImageVal] = React.useState(1);
 
@@ -85,10 +85,10 @@ export default function Imagepreview() {
             <nav className= "hidden sm:flex flex-row space-x-5">
                 {images}
             </nav>
-            <figure className='absolute cursor-pointer top-[50%] right-0 mr-5 rounded-full bg-[#ffffff] py-2 px-3 sm:hidden' onClick={nextImage}>
+            <figure className={`absolute cursor-pointer top-[50%] right-0 mr-5 rounded-full bg-[#ffffff] py-2 px-3 ${props.for ? 'sm:visible' : 'sm:hidden'}`} onClick={nextImage}>
                 <img src={Next} alt="next"/>
             </figure>
-            <figure className='absolute cursor-pointer top-[50%] left-0 ml-5 rounded-full bg-[#ffffff] py-2 px-3 sm:hidden' onClick={prevImage}>
+            <figure className={`absolute cursor-pointer top-[50%] left-0 ml-5 rounded-full bg-[#ffffff] py-2 px-3 ${props.for ? 'sm:visible' : 'sm:hidden'}`} onClick={prevImage}>
                 <img src={Previous} alt="previous"/>
             </figure>
         </section>
