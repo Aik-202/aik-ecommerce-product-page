@@ -22,7 +22,7 @@ export default function App() {
     }
     
     return(
-        <section className='min-h-screen w-full'>
+        <section className='h-screen w-full'>
             <Nav  shopClick = {cartActivate}/> 
             <Body lightBox = {lightBoxActivate}/>
             <Closing />
