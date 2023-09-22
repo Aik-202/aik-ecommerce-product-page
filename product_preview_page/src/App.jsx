@@ -3,7 +3,7 @@ import {Nav, Body, Closing, Cart, LightBox} from './Components'
 
 export default function App() {
     const [cartActive, setCartActive] = React.useState(false);
-    const [lightBoxActive, setlightBoxActive] = React.useState(true)
+    const [lightBoxActive, setlightBoxActive] = React.useState(false)
     
     const cartActivate = () => {
         setCartActive(prev => !prev)
@@ -29,7 +29,7 @@ export default function App() {
             <div className={`absolute top-0 bottom-0 left-0 ${cartActive ? 'w-full h-screen' : 'w-auto h-auto'}`} onClick={cartClose}>
                 <Cart active = {cartActive}/>
             </div>
-            <div className={`absolute top-0 bottom-0 left-0 right-0 w-full h-screen bg-[#000] bg-opacity-20  ${lightBoxActive ? 'block' : 'hidden'}`} onClick={lightBoxClose}>
+            <div className={`fixed top-0 bottom-0 left-0 right-0 w-full h-screen bg-[#000] bg-opacity-20 ${lightBoxActive ? 'block' : 'hidden'}`} onClick={lightBoxClose}>
                 <LightBox close = {lightBoxClose}/>
             </div>
         </section>
