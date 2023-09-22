@@ -7,6 +7,7 @@ export default function App() {
     const [lightBoxActive, setlightBoxActive] = React.useState(false);
     const [count, setCount] = React.useState(0);
     const [cartItems, setCartItems] = React.useState([])
+    const [itemNumber, setitemNumber] = React.useState(1)
 
     const increase = () => {
         setCount((prevCount) => prevCount + 1)
@@ -35,14 +36,25 @@ export default function App() {
 
     const cartAdd = () => {
         const newItems = {
-                 id: cartItems.length + 1,
+                 id: itemNumber,
                  img: Smallproduct1,
                  amount: count,
                  price: `$125.00 x ${count}`,
                  bill: `${125 * count}.00`
                 }
-        setCartItems((prev) => {return [...prev, newItems]});
+        setCartItems((prev) => {
+            if(count == 0) {
+                return [...prev]
+            }
+            return [...prev, newItems]
+        });
+        setitemNumber((prev) => prev + 1);
         cartActivate()
+    }
+
+    const deleteItem = (e) => {
+        const itemId = +e.target.parentElement.parentElement.id;
+        setCartItems((prev) => {return prev.splice(itemId, itemId)})
     }
 
     console.log(cartItems)
@@ -53,7 +65,7 @@ export default function App() {
             <Body lightBox = {lightBoxActivate} count={count} countIncrease={increase} countDecrease={decrease} addToCart={cartAdd}/>
             <Closing />
             <div className={`absolute top-0 bottom-0 left-0 ${cartActive ? 'w-full h-screen' : 'w-auto h-auto'}`} onClick={cartClose}>
-                <Cart active = {cartActive} cartItems={cartItems}/>
+                <Cart active = {cartActive} cartItems={cartItems} deleteItem={deleteItem}/>
             </div>
             <div className={`fixed top-0 bottom-0 left-0 right-0 w-full h-screen bg-[#000] bg-opacity-20 ${lightBoxActive ? 'block' : 'hidden'}`} onClick={lightBoxClose}>
                 <LightBox close = {lightBoxClose}/>

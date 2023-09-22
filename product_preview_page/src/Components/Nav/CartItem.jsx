@@ -3,7 +3,7 @@ import { Delete } from '../../Data'
 
 export default function CartItem (props) {
      const cartContent = props.cartItems.map((item) => 
-          <div key={item.id} className='flex flex-row justify-between mt-5 w-full'>
+          <div key={item.id} className='flex flex-row justify-between mt-5 w-full' id={item.id-1}>
                <figure className='w-16 self-center rounded-lg'>
                     <img src={item.img} alt="sneaker" className='rounded-lg' />
                </figure>
@@ -11,7 +11,7 @@ export default function CartItem (props) {
                     <h6>Fall limited Edition Sneakers</h6>
                     <p>{item.price} <b>{item.bill}</b></p>
                </div>
-               <figure className='self-center'>
+               <figure className='self-center' onClick={props.delete}>
                     <img src={Delete} alt="delete" />
                </figure>
           </div>)
