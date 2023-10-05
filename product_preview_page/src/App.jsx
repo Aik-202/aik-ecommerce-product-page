@@ -14,7 +14,11 @@ export default function App() {
     }
 
     const decrease = () => {
-        setCount((prevCount) => prevCount - 1)
+        if (count == 0) {
+            setCount(0)
+        } else {
+            setCount((prevCount) => prevCount - 1)
+        }
     }
     
     const cartActivate = () => {
@@ -54,12 +58,13 @@ export default function App() {
 
     const deleteItem = (e) => {
         const itemId = +e.target.parentElement.parentElement.id;
+        // console.log(itemId)
         setCartItems((prev) => {prev.splice(itemId, 1); return prev});
         setCartActive(false);
         window.setTimeout(() => {setCartActive(true)}, 500)
     }
 
-    console.log(cartItems)
+    console.log(cartItems);
 
     return(
         <section className='h-screen w-full'>
