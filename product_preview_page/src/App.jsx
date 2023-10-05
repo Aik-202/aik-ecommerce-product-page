@@ -6,8 +6,8 @@ export default function App() {
     const [cartActive, setCartActive] = React.useState(false);
     const [lightBoxActive, setlightBoxActive] = React.useState(false);
     const [count, setCount] = React.useState(0);
-    const [cartItems, setCartItems] = React.useState([])
-    const [itemNumber, setitemNumber] = React.useState(1)
+    const [cartItems, setCartItems] = React.useState([]);
+    const [itemNumber, setitemNumber] = React.useState(1);
 
     const increase = () => {
         setCount((prevCount) => prevCount + 1)
@@ -54,7 +54,9 @@ export default function App() {
 
     const deleteItem = (e) => {
         const itemId = +e.target.parentElement.parentElement.id;
-        setCartItems((prev) => {return prev.splice(itemId, itemId)})
+        setCartItems((prev) => {prev.splice(itemId, 1); return prev});
+        setCartActive(false);
+        window.setTimeout(() => {setCartActive(true)}, 500)
     }
 
     console.log(cartItems)
