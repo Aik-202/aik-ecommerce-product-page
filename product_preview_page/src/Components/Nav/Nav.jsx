@@ -6,7 +6,7 @@ export default function Nav (props) {
         <nav id="header" className= "flex flex-row mx-w-full space-x-2 justify-between mr-5">
             <Navlist />
             <div role= "group" className= "flex flex-row space-x-7 mt-2">
-                <Shop cartOpen = {props.shopClick}/>
+                <Shop cartOpen={props.shopClick} notify={props.notify} amount={props.amount}/>
                 <Avatar />
             </div>
         </nav>

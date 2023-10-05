@@ -9,12 +9,15 @@ export default function App() {
     const [cartItems, setCartItems] = React.useState([]);
     const [itemNumber, setitemNumber] = React.useState(1);
     const [updateCart, setUpdateCart] = React.useState(false);
+    const [cartNotification, setCartNotification] = React.useState(false);
 
     const increase = () => {
+        setCartNotification(false);
         setCount((prevCount) => prevCount + 1)
     }
 
     const decrease = () => {
+        setCartNotification(false);
         if (count == 0) {
             setCount(0)
         } else {
@@ -23,11 +26,13 @@ export default function App() {
     }
     
     const cartActivate = () => {
-        setCartActive(prev => !prev)
+        setCartActive(prev => !prev);
+        setCartNotification(false)
     }
 
     const cartClose = () => {
-        setCartActive(false)
+        setCartActive(false);
+        setCartNotification(false)
     }
 
     const lightBoxActivate = () => {
@@ -40,6 +45,7 @@ export default function App() {
 
 
     const cartAdd = () => {
+        setCartNotification(true);
         const newItems = {
                  id: itemNumber,
                  img: Smallproduct1,
@@ -54,7 +60,6 @@ export default function App() {
             return [...prev, newItems]
         });
         setitemNumber((prev) => prev + 1);
-        cartActivate()
     }
 
     const deleteItem = (e) => {
@@ -81,14 +86,14 @@ export default function App() {
                 <p className='text-[#ff7d1a] uppercase'>Updating Cart....</p>
             </div>}
             <section className='h-screen w-full'>
-                <Nav  shopClick = {cartActivate}/> 
-                <Body lightBox = {lightBoxActivate} count={count} countIncrease={increase} countDecrease={decrease} addToCart={cartAdd}/>
+                <Nav  shopClick={cartActivate} notify={cartNotification} amount={count}/> 
+                <Body lightBox={lightBoxActivate} count={count} countIncrease={increase} countDecrease={decrease} addToCart={cartAdd}/>
                 <Closing />
                 <div className={`absolute top-0 bottom-0 left-0 ${cartActive ? 'w-full h-screen' : 'w-auto h-auto'}`} onClick={cartClose}>
-                    <Cart active = {cartActive} cartItems={cartItems} deleteItem={deleteItem} checkOut={checkOut} />
+                    <Cart active={cartActive} cartItems={cartItems} deleteItem={deleteItem} checkOut={checkOut} />
                 </div>
                 <div className={`fixed top-0 bottom-0 left-0 right-0 w-full h-screen bg-[#000] bg-opacity-20 ${lightBoxActive ? 'block' : 'hidden'}`} onClick={lightBoxClose}>
-                    <LightBox close = {lightBoxClose}/>
+                    <LightBox close={lightBoxClose}/>
                 </div>
             </section>
         </section>
