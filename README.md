@@ -52,7 +52,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/ecommerce-product-prieview-page-using-react-and-js-local-storage-JkLId1qB4A)
 - Live Site URL: [Add live site URL here](https://aik-ecommerce-product-page.vercel.app/)
 
 ## My process
