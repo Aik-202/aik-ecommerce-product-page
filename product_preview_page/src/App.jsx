@@ -13,6 +13,15 @@ export default function App() {
     const [updateCart, setUpdateCart] = React.useState(false);
     const [cartNotification, setCartNotification] = React.useState(false);
 
+    React.useEffect(() => {
+        const data = window.localStorage.getItem('cartItems');
+        if ( data !== null ) setCartItems(JSON.parse(data));
+    }, []);
+
+    React.useEffect(() => {
+        window.localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }, [cartItems]);
+
     const increase = () => {
         setCartNotification(false);
         setCount((prevCount) => prevCount + 1)
@@ -81,8 +90,6 @@ export default function App() {
         setUpdateCart(true);
         window.setTimeout(() => {setUpdateCart(false); setCartActive(true)}, 500)
     }
-
-    console.log(cartItems);
 
     return(
         <section>

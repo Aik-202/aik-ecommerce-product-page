@@ -64,6 +64,7 @@ Users should be able to:
 - Flexbox
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
+- JavaScript localStorage
 
 
 ### What I learned
@@ -85,7 +86,18 @@ export default function LightBox(props) {
     </section>
   )
 }
+```
+Using useEffect to store cart items in local storage
 
+```React
+    React.useEffect(() => {
+            const data = window.localStorage.getItem('cartItems');
+            if ( data !== null ) setCartItems(JSON.parse(data));
+        }, []);
+
+    React.useEffect(() => {
+        window.localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }, [cartItems]);
 ```
 
 
@@ -100,7 +112,7 @@ I would like to use react redux to manage state instead of excessive passing of 
 - [Example resource 2](https://stackoverflow.com/questions/69228627/how-to-properly-check-the-current-index-of-an-array-in-a-react-map) - This helped me to add to get the index of an element from a .map array function. I really liked this pattern and will use it going forward.
 - [Example resource 3](https://www.w3schools.com/howto/howto_js_lightbox.asp) - This helped me in creating my lightbox feature. I really liked this pattern and will use it going forward.
 - [Example resource 4](https://stackoverflow.com/questions/54114171/how-to-play-an-mp3-once-onclick-in-react) - This helped me to add audio to the page when a new item gets added to the cart. I really liked this pattern and will use it going forward.
-
+- [Example resource 5](https://spacejelly.dev/posts/how-to-save-state-to-localstorage-persist-on-refresh-with-react-js/) - This helped me to use useEffect and localStorge to maintain cartItems data after refresh. I really liked this pattern and will use it going forward.
 
 ## Author
 
