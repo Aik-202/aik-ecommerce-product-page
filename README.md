@@ -116,6 +116,6 @@ I would like to use react redux to manage state instead of excessive passing of 
 
 ## Author
 
-- Github - [@Aik-202](https://aik-202.github.io/aik-ecommerce-product-page/)
+- Github - [@Aik-202](https://github.com/Aik-202/aik-ecommerce-product-page.git)
 - Frontend Mentor - [@Aik-202](https://www.frontendmentor.io/profile/Aik-202)
 - Twitter - [@chiomaikogwe](https://www.twitter.com/chiomaikogwe)
