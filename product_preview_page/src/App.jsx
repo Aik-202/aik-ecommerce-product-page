@@ -1,8 +1,10 @@
 import React from 'react';
 import {Nav, Body, Closing, Cart, LightBox} from './Components';
-import { Smallproduct1 } from './Data'
+import { Smallproduct1, Sound } from './Data'
 
 export default function App() {
+    const audio = new Audio (Sound);
+    
     const [cartActive, setCartActive] = React.useState(false);
     const [lightBoxActive, setlightBoxActive] = React.useState(false);
     const [count, setCount] = React.useState(0);
@@ -45,6 +47,7 @@ export default function App() {
 
 
     const cartAdd = () => {
+        audio.play()
         setCartNotification(true);
         const newItems = {
                  id: itemNumber,
