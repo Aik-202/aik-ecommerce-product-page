@@ -66,8 +66,8 @@ export default function App() {
     }
 
     const deleteItem = (e) => {
+        audio.play()
         const itemId = +e.target.parentElement.parentElement.id;
-        // console.log(itemId)
         setCartItems((prev) => {prev.splice(itemId, 1); return prev});
         setCartActive(false);
         setUpdateCart(true);
@@ -75,6 +75,7 @@ export default function App() {
     }
 
     const checkOut = () => {
+        audio.play()
         setCartItems([]);
         setCartActive(false);
         setUpdateCart(true);
