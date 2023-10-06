@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bigproduct1, Bigproduct2, Bigproduct3, Bigproduct4 } from '../../Data';
+import { Bigproduct1, Bigproduct2, Bigproduct3, Bigproduct4, Smallproduct1 } from '../../Data';
 import { imageList } from '../../Data/demo';
 // import {Bigimage, Slidermenu} from '../'
 
@@ -73,7 +73,7 @@ export default function Imagepreview(props) {
 
     const images = imageList.map((image) => 
         <figure className='p-0 rounded-xl cursor-pointer hover:border-[#ff7d1a] hover:border-solid hover:border-2' key={image.id}>
-            <img key={image.id} id={image.id} src={image.img} onClick={changeImage} className={`rounded-lg m-0 ${props.for ? 'hover:opacity-[1] hover:contrast-50' : 'hover:opacity-[50%]'}`}/>
+            <img key={image.id} id={image.id} src={image.img} onClick={changeImage} className={`rounded-lg m-0 ${props.for ? 'opacity-100 transition-opacity hover:opacity-[1] hover:contrast-50' : 'opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-[50%]'}`}/>
         </figure>
     )
 

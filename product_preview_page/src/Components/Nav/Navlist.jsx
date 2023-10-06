@@ -8,7 +8,7 @@ export default function Navlist() {
 
     const menu = menuList.map((items) => 
         <li key={items.id} className="mx-2 w-max cursor-pointer text-[#1d2025] font-bold sm:font-normal ml-5 sm:ml-0 
-        sm:text-[#68707d] sm:my-5 lg:m-5 pb-2 mb-0 hover:border-transparent hover:border-b-[#ff7d1a] hover:border-2 hover:border-solid">{items.name}</li>
+        sm:text-[#68707d] sm:my-5 lg:m-5 pb-2 mb-0 transition-colors ease-in-out delay-150 border-0 border-transparent hover:border-b-[#ff7d1a] hover:border-2 hover:border-solid duration-300">{items.name}</li>
     );
 
     const notClose = (e) => {
