@@ -12,6 +12,7 @@ export default function App() {
     const [itemNumber, setitemNumber] = React.useState(1);
     const [updateCart, setUpdateCart] = React.useState(false);
     const [cartNotification, setCartNotification] = React.useState(false);
+    const [animate, setAnimate] = React.useState(false)
 
     React.useEffect(() => {
         const data = window.localStorage.getItem('cartItems');
@@ -57,21 +58,26 @@ export default function App() {
 
     const cartAdd = () => {
         audio.play()
-        setCartNotification(true);
-        const newItems = {
-                 id: itemNumber,
-                 img: Smallproduct1,
-                 amount: count,
-                 price: `$125.00 x ${count}`,
-                 bill: `${125 * count}.00`
+        window.scrollTo({top:0, left:0, behaviour: 'smooth'});
+        setAnimate(true)
+        window.setTimeout(() => {
+            setAnimate(false)
+            setCartNotification(true);
+            const newItems = {
+                    id: itemNumber,
+                    img: Smallproduct1,
+                    amount: count,
+                    price: `$125.00 x ${count}`,
+                    bill: `${125 * count}.00`
+                    }
+            setCartItems((prev) => {
+                if(count == 0) {
+                    return [...prev]
                 }
-        setCartItems((prev) => {
-            if(count == 0) {
-                return [...prev]
-            }
-            return [...prev, newItems]
-        });
-        setitemNumber((prev) => prev + 1);
+                return [...prev, newItems]
+            });
+            setitemNumber((prev) => prev + 1);
+        }, 2000)
     }
 
     const deleteItem = (e) => {
@@ -98,7 +104,7 @@ export default function App() {
             </div>}
             <section className='h-screen w-full'>
                 <Nav  shopClick={cartActivate} notify={cartNotification} amount={count}/> 
-                <Body lightBox={lightBoxActivate} count={count} countIncrease={increase} countDecrease={decrease} addToCart={cartAdd}/>
+                <Body lightBox={lightBoxActivate} count={count} countIncrease={increase} countDecrease={decrease} addToCart={cartAdd} animate={animate}/>
                 <Closing />
                 <div className={`absolute top-0 bottom-0 left-0 ${cartActive ? 'w-full h-screen' : 'w-auto h-auto'}`} onClick={cartClose}>
                     <Cart active={cartActive} cartItems={cartItems} deleteItem={deleteItem} checkOut={checkOut} />
